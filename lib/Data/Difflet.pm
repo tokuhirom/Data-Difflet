@@ -182,6 +182,8 @@ Data::Difflet - Ultra special pretty cute diff generator Mark II
 
 =head1 DESCRIPTION
 
+B<THIS MODULE IS IN ITS BETA QUALITY. THE API MAY CHANGE IN THE FUTURE>
+
 Data::Difflet is colorful diff generator for Perl5!
 
 See the following image!
