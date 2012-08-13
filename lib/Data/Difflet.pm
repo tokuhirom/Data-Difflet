@@ -7,6 +7,7 @@ use Term::ANSIColor;
 use Data::Dumper;
 
 our $LEVEL;
+our $BUFFER;
 
 sub new {
     my $class = shift;
@@ -21,12 +22,23 @@ sub new {
 
 sub _($) { die "Do not call directly"; }
 
+sub ddf {
+    my $self = shift;
+    @_==1 or die;
+
+    local $Data::Dumper::Terse = 1;
+    local $Data::Dumper::Indent = 0;
+    Dumper(@_);
+}
+
 sub compare {
     my $self = shift;
     local $LEVEL = 0;
+    local $BUFFER = '';
     no warnings 'redefine';
     local *_ = sub($) { $self->ddf(@_) };
     $self->_compare(@_);
+    return $BUFFER;
 }
 
 # TODO: recursion detection
@@ -115,41 +127,32 @@ sub _compare {
 
 sub _print {
     my ($self, @args) = @_;
-    print(' 'x($LEVEL*$self->{indent}));
-    printf colored(['reset'], shift @args), @args;
-}
-
-sub ddf {
-    my $self = shift;
-    @_==1 or die;
-
-    local $Data::Dumper::Terse = 1;
-    local $Data::Dumper::Indent = 0;
-    Dumper(@_);
+    $BUFFER .= ' 'x($LEVEL*$self->{indent});
+    $BUFFER .= sprintf colored(['reset'], shift @args), @args;
 }
 
 sub _inserted {
     my ($self, @args) = @_;
-    print(' 'x($LEVEL*$self->{indent}));
-    printf colored([$self->{"inserted_color"}], shift @args), @args;
+    $BUFFER .= ' 'x($LEVEL*$self->{indent});
+    $BUFFER .= sprintf colored([$self->{"inserted_color"}], shift @args), @args;
 }
 
 sub _updated {
     my ($self, @args) = @_;
-    print(' 'x($LEVEL*$self->{indent}));
-    printf colored([$self->{"updated_color"}], shift @args), @args;
+    $BUFFER .= ' 'x($LEVEL*$self->{indent});
+    $BUFFER .= sprintf colored([$self->{"updated_color"}], shift @args), @args;
 }
 
 sub _deleted {
     my ($self, @args) = @_;
-    print(' 'x($LEVEL*$self->{indent}));
-    printf colored([$self->{"deleted_color"}], shift @args), @args;
+    $BUFFER .= ' 'x($LEVEL*$self->{indent});
+    $BUFFER .= sprintf colored([$self->{"deleted_color"}], shift @args), @args;
 }
 
 sub _comment {
     my ($self, @args) = @_;
-    print(' 'x($LEVEL*$self->{indent}));
-    printf colored([$self->{"comment_color"}], shift @args), @args;
+    $BUFFER .= ' 'x($LEVEL*$self->{indent});
+    $BUFFER .= sprintf colored([$self->{"comment_color"}], shift @args), @args;
 }
 
 1;

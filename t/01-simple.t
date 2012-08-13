@@ -9,30 +9,30 @@ use Data::Difflet;
 
 my $difflet = Data::Difflet->new();
 
-$difflet->compare(+{
+note $difflet->compare(+{
     1 => 2,
     2 => 3,
     foo => 'bar',
 }, {1 => 2, 2 => 4, 3 => 1});
 
-$difflet->compare(+{
+note $difflet->compare(+{
     1 => 2,
     2 => 3,
     foo => 'bar',
 }, [1,2,3]);
 
-$difflet->compare(+[
+note $difflet->compare(+[
     4,
     2,
     3,
     8
 ], [1,2,3]);
 
-$difflet->compare(+[1], {});
-$difflet->compare('a', 'b');
-$difflet->compare('a', 'a');
+note $difflet->compare(+[1], {});
+note $difflet->compare('a', 'b');
+note $difflet->compare('a', 'a');
 
-$difflet->compare(
+note $difflet->compare(
     +[
         {
             1 => 2,
@@ -42,7 +42,7 @@ $difflet->compare(
     [ { 2 => 4, 3 => 5 } ]
 );
 
-$difflet->compare(
+note $difflet->compare(
     +[
         {
             1   => 2,

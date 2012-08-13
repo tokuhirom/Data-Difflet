@@ -8,7 +8,7 @@ use autodie;
 use Data::Difflet;
 
 my $difflet = Data::Difflet->new();
-$difflet->compare(
+print $difflet->compare(
     {
         a => 2,
         c => 5,
