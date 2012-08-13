@@ -1,6 +1,6 @@
 package Data::Difflet;
 use strict;
-use warnings;
+use warnings FATAL => 'recursion';
 use 5.008008;
 our $VERSION = '0.01';
 use Term::ANSIColor;

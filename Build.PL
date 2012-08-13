@@ -16,6 +16,7 @@ my $build = Module::Build->new(
         'parent'                        => '0',
         # 'Plack'                         => '0.9949',
         'Term::ANSIColor' => 0,
+        'Test::More' => 0.96,
     },
 
     no_index    => { 'directory' => [ 'inc' ] },
