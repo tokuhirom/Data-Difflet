@@ -3,6 +3,7 @@ Changes
 eg/simple.pl
 eg/test.pl
 lib/Data/Difflet.pm
+lib/Test/Difflet.pm
 LICENSE
 MANIFEST			This list of files
 META.json
