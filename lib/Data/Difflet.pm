@@ -192,6 +192,20 @@ See the following image!
 
 =end html
 
+=head1 METHODS
+
+=over 4
+
+=item my $difflet = Data::Difflet->new();
+
+Create new instance of Data::Difflet object.
+
+=item $difflet->compare($a, $b);
+
+Compare the two data and get a colorized strings.
+
+=back
+
 =head1 AUTHOR
 
 Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>
