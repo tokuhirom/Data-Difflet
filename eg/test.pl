@@ -13,14 +13,17 @@ sub equivalent {
     my ($got, $expected, $msg) = @_;
     my $builder = Test::More->builder;
 
-    if (eq_deeply($got, $expected)) {
-        local $Test::Builder::Level = $Test::Builder::Level + 1;
-        $builder->ok(1, $msg);
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
+    if (-t *STDOUT) {
+        if (eq_deeply($got, $expected)) {
+            $builder->ok(1, $msg);
+        } else {
+            my $difflet = Data::Difflet->new();
+            $builder->ok(0, $msg);
+            $builder->diag($difflet->compare($got, $expected));
+        }
     } else {
-        local $Test::Builder::Level = $Test::Builder::Level + 1;
-        my $difflet = Data::Difflet->new();
-        $builder->ok(0, $msg);
-        $builder->diag($difflet->compare($got, $expected));
+        is_deeply($got, $expected, $msg);
     }
 }
 
