@@ -1,8 +1,15 @@
 Build.PL
 Changes
+eg/simple.pl
+eg/test.pl
 lib/Data/Difflet.pm
+LICENSE
 MANIFEST			This list of files
+META.json
+META.yml
+README
 t/00_compile.t
+t/01-simple.t
 xt/01_podspell.t
 xt/02_perlcritic.t
 xt/03_pod.t
