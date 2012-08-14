@@ -37,6 +37,7 @@ sub compare {
     local $BUFFER = '';
     no warnings 'redefine';
     local *_ = sub($) { $self->ddf(@_) };
+    local $Term::ANSIColor::EACHLINE = "\n";
     $self->_compare(@_);
     return $BUFFER;
 }
