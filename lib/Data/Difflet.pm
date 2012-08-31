@@ -20,7 +20,7 @@ sub new {
     }, $class;
 }
 
-sub _($) { die "Do not call directly"; }
+sub _f($) { die "Do not call directly"; }
 
 sub ddf {
     my $self = shift;
@@ -36,7 +36,7 @@ sub compare {
     local $LEVEL = 0;
     local $BUFFER = '';
     no warnings 'redefine';
-    local *_ = sub($) { $self->ddf(@_) };
+    local *_f = sub($) { $self->ddf(@_) };
     local $Term::ANSIColor::EACHLINE = "\n";
     $self->_compare(@_);
     return $BUFFER;
@@ -56,13 +56,13 @@ sub _compare {
                             $self->_print("%s => %s,\n", $self->ddf($key), $self->ddf($a->{$key}));
                         } else {
                             if (ref($a->{$key}) or ref($b->{$key})) {
-                                $self->_print("%s => ", _($key));
+                                $self->_print("%s => ", _f($key));
                                 local $LEVEL = $LEVEL + 1;
                                 $self->_compare($a->{$key}, $b->{$key});
                                 $self->_print(",\n");
                             } else {
-                                $self->_updated("%s => %s,", _($key), _($a->{$key}));
-                                $self->_comment(" # != %s,\n", _($b->{$key}));
+                                $self->_updated("%s => %s,", _f($key), _f($a->{$key}));
+                                $self->_comment(" # != %s,\n", _f($b->{$key}));
                             }
                         }
                     } else {
@@ -90,8 +90,8 @@ sub _compare {
                 my $i = 0;
                 while (1) {
                     if ($i<$alen && $i<$blen) { # both
-                        if (_($a->[$i]) eq _($b->[$i])) {
-                            $self->_print("%s,\n", _($a->[$i]));
+                        if (_f($a->[$i]) eq _f($b->[$i])) {
+                            $self->_print("%s,\n", _f($a->[$i]));
                         } else {
                             if (ref($a->[$i]) or ref($b->[$i])) {
                                 local $LEVEL = $LEVEL + 1;
