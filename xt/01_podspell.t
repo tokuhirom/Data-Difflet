@@ -60,3 +60,4 @@ mysqldiff
 mmm
 difflet
 js
+colorized
