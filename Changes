@@ -1,5 +1,9 @@
 Revision history for Perl extension Data::Difflet
 
+0.04
+
+    - fixed for 5.8
+
 0.03
 
     - Fixed colorize next line(syohex++)
