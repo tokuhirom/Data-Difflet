@@ -102,9 +102,9 @@ sub _compare {
                             }
                         }
                     } elsif ($i<$alen) {
-                        $self->_inserted("%s,\n", _ $a->[$i]);
+                        $self->_inserted("%s,\n", _f $a->[$i]);
                     } elsif ($i<$blen) {
-                        $self->_deleted("%s,\n", _ $b->[$i]);
+                        $self->_deleted("%s,\n", _f $b->[$i]);
                     } else {
                         last;
                     }
