@@ -33,7 +33,7 @@ sub difflet_is_deeply {
             $builder->diag($difflet->compare($got, $expected));
         }
     } else {
-        $builder->is_deeply($got, $expected, $msg);
+        is_deeply($got, $expected, $msg);
     }
 }
 
