@@ -2,7 +2,7 @@ package Data::Difflet;
 use strict;
 use warnings FATAL => 'recursion';
 use 5.008008;
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 use Term::ANSIColor;
 use Data::Dumper;
 

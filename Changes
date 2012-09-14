@@ -1,5 +1,18 @@
 Revision history for Perl extension Data::Difflet
 
+0.05
+
+    commit 159d0fbe38ee2e671250be08020009c34a887af0
+    Author: Kozaki, Tsuneaki <kozaki.tsuneaki@gmail.com>
+    Date:   Sat Sep 15 02:00:31 2012 +0900
+
+    fix the problem when execute test file with prove
+
+    When we execute the test file with prove, we've got an error message.
+    - Can't locate object method "is_deeply" via package "Test::Builder"
+
+    I simply replaced the call $builder->is_deeply() with is_deeply().
+
 0.04
 
     - fixed for 5.8
