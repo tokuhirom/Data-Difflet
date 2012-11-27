@@ -12,6 +12,7 @@ my $build = Module::Build->new(
     },
     configure_requires   => { 'Module::Build' => '0.38' },
     requires             => {
+        perl => '5.008008',
         # 'Exporter'                      => '0',
         'parent'                        => '0',
         # 'Plack'                         => '0.9949',
