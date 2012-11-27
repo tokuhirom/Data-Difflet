@@ -1,5 +1,9 @@
 Revision history for Perl extension Data::Difflet
 
+0.06
+
+    - need to sort keys when comparing dump result
+
 0.05
 
     commit 159d0fbe38ee2e671250be08020009c34a887af0
