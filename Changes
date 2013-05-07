@@ -1,5 +1,7 @@
 Revision history for Perl extension Data::Difflet
 
+{{$NEXT}}
+
 0.06
 
     - need to sort keys when comparing dump result
