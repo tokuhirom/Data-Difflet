@@ -30,11 +30,11 @@ See the following image!
 
 # METHODS
 
-- my $difflet = Data::Difflet->new();
+- `my $difflet = Data::Difflet->new();`
 
     Create new instance of Data::Difflet object.
 
-- $difflet->compare($a, $b);
+- `$difflet->compare($a, $b);`
 
     Compare the two data and get a colorized strings.
 
