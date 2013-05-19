@@ -66,12 +66,12 @@
          "web" : "https://github.com/tokuhirom/Data-Difflet"
       }
    },
-   "version" : "0.07",
+   "version" : "0.08",
    "x_contributors" : [
       "Syohei YOSHIDA <syohex@gmail.com>",
       "Olaf Alders <olaf@wundersolutions.com>",
       "Kozaki, Tsuneaki <kozaki.tsuneaki@gmail.com>",
       "Takumi Akiyama <t.akiym@gmail.com>",
-      "Tokuhiro Matsuno <tokuhirom@gmail.com>"
+      "tokuhirom <tokuhirom@gmail.com>"
    ]
 }

@@ -2,6 +2,13 @@ Revision history for Perl extension Data::Difflet
 
 {{$NEXT}}
 
+0.08 2013-05-19T13:17:19Z
+
+    Author: Takumi Akiyama <t.akiym@gmail.com>
+    Date:   Sun May 19 15:23:43 2013 +0900
+
+    fix for hash randomization
+
 0.07 2013-05-07T10:59:14Z
 
     - re-packaging with minilla
