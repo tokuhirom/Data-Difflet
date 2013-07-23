@@ -14,6 +14,7 @@ sub import {
         if ($_ eq 'is_deeply') {
             no warnings 'redefine';
             *{"${pkg}::is_deeply"} = \&difflet_is_deeply;
+            *Test::More::is_deeply = \&difflet_is_deeply;
         }
     }
     *{"${pkg}::difflet_is_deeply"} = \&difflet_is_deeply;
