@@ -2,6 +2,25 @@ Revision history for Perl extension Data::Difflet
 
 {{$NEXT}}
 
+0.09 2013-07-24T04:05:04Z
+
+
+    ommit 1b43a2b26547c3f8a3f499bde255f63647f06aad
+    Author: HIROSE Masaaki <hirose31@gmail.com>
+    Date:   Tue Jul 23 22:15:15 2013 +0900
+
+        Enable difflet_is_deeply when run tests by prove
+
+    commit fc04820fffac844fa5638a61e306622915c42f13
+    Author: HIROSE Masaaki <hirose31@gmail.com>
+    Date:   Tue Jul 23 22:20:04 2013 +0900
+
+        Override Test::More::is_deeply when use with "qw(is_deeply)"
+
+        I want to use difflet_is_deeply as is_deeply personally so I added
+        '''--exec "perl -Ilib -MTest::Difflet=is_deeply"''' to my ~/.proverc
+        but no effect.
+
 0.08 2013-05-19T13:17:19Z
 
     Author: Takumi Akiyama <t.akiym@gmail.com>
