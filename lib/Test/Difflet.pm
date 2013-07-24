@@ -25,7 +25,7 @@ sub difflet_is_deeply {
 
     my $builder = Test::More->builder;
     local $Test::Builder::Level = $Test::Builder::Level + 1;
-    if (-t *STDOUT) {
+    if (-t *STDOUT || $ENV{HARNESS_ACTIVE}) {
         if (_eq_deeply($got, $expected)) {
             $builder->ok(1, $msg);
         } else {
