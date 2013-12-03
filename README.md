@@ -38,6 +38,18 @@ See the following image!
 
     Compare the two data and get a colorized strings.
 
+# ENVIRONMENT VARIABLES
+
+- DD\_COLOR
+
+    DD\_COLOR is used as default color.
+
+    Format of value is "TYPE=FG;BG:TYPE=FG;BG:...". "FG" and "BG" are optional.
+
+    For example:
+
+        export DD_COLOR='updated=yellow:inserted=;cyan:deleted=yellow;red'
+
 # AUTHOR
 
 Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>

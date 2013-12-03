@@ -2,6 +2,20 @@ Revision history for Perl extension Data::Difflet
 
 {{$NEXT}}
 
+0.10 2013-12-03T21:13:37Z
+
+    commit 46ddaec66229e2519bc7c82d5b37b0865b6c0dd1
+    Author: HIROSE Masaaki <hirose31@gmail.com>
+    Date:   Tue Dec 3 21:42:44 2013 +0900
+
+    Enable to set default colors by environment variable DD_COLOR
+
+    commit 4bc342dc713456efbf6a12b24d4e687d5240b9b0
+    Author: Neil Bowers <neil@bowers.com>
+    Date:   Tue Oct 8 22:28:43 2013 +0100
+
+    Reformatted as per CPAN::Changes::Spec
+
 0.09 2013-07-24T04:05:04Z
 
     - Enable difflet_is_deeply when run tests by prove

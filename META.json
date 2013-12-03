@@ -4,7 +4,7 @@
       "Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.5.5, CPAN::Meta::Converter version 2.130880",
+   "generated_by" : "Minilla/v0.11.0, CPAN::Meta::Converter version 2.132830",
    "license" : [
       "perl_5"
    ],
@@ -21,7 +21,8 @@
          "share",
          "eg",
          "examples",
-         "author"
+         "author",
+         "builder"
       ]
    },
    "prereqs" : {
@@ -66,13 +67,14 @@
          "web" : "https://github.com/tokuhirom/Data-Difflet"
       }
    },
-   "version" : "0.09",
+   "version" : "0.10",
    "x_contributors" : [
       "Syohei YOSHIDA <syohex@gmail.com>",
       "Olaf Alders <olaf@wundersolutions.com>",
       "Kozaki, Tsuneaki <kozaki.tsuneaki@gmail.com>",
       "Takumi Akiyama <t.akiym@gmail.com>",
+      "Neil Bowers <neil@bowers.com>",
       "HIROSE Masaaki <hirose31@gmail.com>",
-      "tokuhirom <tokuhirom@gmail.com>"
+      "Tokuhiro Matsuno <tokuhirom@gmail.com>"
    ]
 }
