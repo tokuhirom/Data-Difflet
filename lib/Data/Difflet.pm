@@ -11,11 +11,23 @@ our $BUFFER;
 
 sub new {
     my $class = shift;
-    bless {
+    my %color = (
         inserted_color => 'green',
-        deleted_color => 'red',
-        updated_color => 'blue',
-        comment_color => 'cyan',
+        deleted_color  => 'red',
+        updated_color  => 'blue',
+        comment_color  => 'cyan',
+    );
+    if ($ENV{DD_COLOR}) {
+        # TYPE=FG;BG:TYPE=FG;BG:...
+        for my $type_color (split /:/, $ENV{DD_COLOR}) {
+            my($type, $color) = split /=/, $type_color, 2;
+            my($fg, $bg)      = split /;/, $color, 2;
+            $type .= "_color";
+            $color{$type} = ($fg ? "$fg " : "").($bg ? "on_$bg" : "");
+        }
+    }
+    bless {
+        %color,
         indent => 2,
     }, $class;
 }
@@ -208,6 +220,22 @@ Create new instance of Data::Difflet object.
 =item C<< $difflet->compare($a, $b); >>
 
 Compare the two data and get a colorized strings.
+
+=back
+
+=head1 ENVIRONMENT VARIABLES
+
+=over 4
+
+=item DD_COLOR
+
+DD_COLOR is used as default color.
+
+Format of value is "TYPE=FG;BG:TYPE=FG;BG:...". "FG" and "BG" are optional.
+
+For example:
+
+    export DD_COLOR='updated=yellow:inserted=;cyan:deleted=yellow;red'
 
 =back
 
