@@ -147,7 +147,9 @@ sub _print {
 sub _inserted {
     my ($self, @args) = @_;
     $BUFFER .= ' 'x($LEVEL*$self->{indent});
-    $BUFFER .= sprintf colored([$self->{"inserted_color"}], shift @args), @args;
+    chomp(my $fmt = shift @args);
+    $BUFFER .= sprintf colored([$self->{"inserted_color"}], $fmt), @args;
+    $self->_comment(" # <<<\n");
 }
 
 sub _updated {
@@ -159,7 +161,9 @@ sub _updated {
 sub _deleted {
     my ($self, @args) = @_;
     $BUFFER .= ' 'x($LEVEL*$self->{indent});
-    $BUFFER .= sprintf colored([$self->{"deleted_color"}], shift @args), @args;
+    chomp(my $fmt = shift @args);
+    $BUFFER .= sprintf colored([$self->{"deleted_color"}], $fmt), @args;
+    $self->_comment(" # >>>\n");
 }
 
 sub _comment {
