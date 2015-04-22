@@ -20,13 +20,15 @@ Data::Difflet - Ultra special pretty cute diff generator Mark II
 
 # DESCRIPTION
 
-__THIS MODULE IS IN ITS BETA QUALITY. THE API MAY CHANGE IN THE FUTURE__
+**THIS MODULE IS IN ITS BETA QUALITY. THE API MAY CHANGE IN THE FUTURE**
 
 Data::Difflet is colorful diff generator for Perl5!
 
 See the following image!
 
-<img src="http://gyazo.64p.org/image/a82cb1898b53d51e45e49b21667aec85.png">
+<div>
+    <img src="http://gyazo.64p.org/image/a82cb1898b53d51e45e49b21667aec85.png">
+</div>
 
 # METHODS
 
